@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registre des cartes d'orientation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@2.17.0/dist/leaflet-geoman.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Bandeau permanent : ce site n'est pas officiel -->
+  <div class="bandeau-prototype" data-i18n="bandeau.prototype"></div>
+
+  <header class="entete">
+    <a class="marque" href="#/">
+      <!-- Logo provisoire : balise de course d'orientation (pas le logo FRSO) -->
+      <svg class="marque-logo" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="4" y="4" width="32" height="32" rx="2" fill="#fff" stroke="#1e4a40" stroke-width="2"/>
+        <path d="M5 5 L35 35 L5 35 Z" fill="#e27639"/>
+      </svg>
+      <span class="marque-texte">
+        <span class="marque-titre" data-i18n="app.titre"></span>
+        <span class="marque-sous-titre" data-i18n="app.sousTitre"></span>
+      </span>
+    </a>
+
+    <div class="entete-outils">
+      <label class="outil">
+        <span class="outil-libelle" data-i18n="entete.profil"></span>
+        <select id="choix-profil"></select>
+      </label>
+      <label class="outil" id="outil-club">
+        <span class="outil-libelle" data-i18n="entete.club"></span>
+        <select id="choix-club"></select>
+      </label>
+      <a class="lien-signalements" id="lien-admin" href="#/admin" hidden></a>
+      <a class="lien-signalements" id="lien-signalements" href="#/signalements" hidden></a>
+      <a class="lien-droits" href="#/droits" data-i18n="entete.droits"></a>
+      <div class="choix-langue" role="group" aria-label="Langue / Taal">
+        <button type="button" data-langue="fr">FR</button>
+        <button type="button" data-langue="nl">NL</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu" class="contenu"></main>
+
+  <footer class="pied">
+    <span data-i18n="pied.stockage"></span>
+    <button type="button" class="bouton-lien" id="reinitialiser" data-i18n="pied.reinitialiser"></button>
+  </footer>
+
+  <!-- Les fichiers sont chargés dans cet ordre : chacun utilise les précédents -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@2.17.0/dist/leaflet-geoman.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js"></script>
+  <script src="js/lang/fr.js"></script>
+  <script src="js/lang/nl.js"></script>
+  <script src="js/stockage.js"></script>
+  <script src="js/donnees-demo.js"></script>
+  <script src="js/donnees.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/profils.js"></script>
+  <script src="js/regles.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/fonds.js"></script>
+  <script src="js/acces.js"></script>
+  <script src="js/zones.js"></script>
+  <script src="js/apercu.js"></script>
+  <script src="js/registre.js"></script>
+  <script src="js/fiche.js"></script>
+  <script src="js/edition.js"></script>
+  <script src="js/signalements.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/lecture-liste.js"></script>
+  <script src="js/import.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
